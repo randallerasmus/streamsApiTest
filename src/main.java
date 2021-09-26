@@ -22,5 +22,9 @@ public class main {
             }
         }
         System.out.println(newList);
+
+        //Stream Api to get the even numbers in the list
+        List<Integer> streamList = listTest.stream().filter(num ->num %2 ==0).collect(Collectors.toList());
+        System.out.println(streamList);
     }
 }
