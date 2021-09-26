@@ -5,26 +5,32 @@ import java.util.stream.Collectors;
 public class main {
     public static void main(String[] args) {
 
-        List<Integer> listTest = new ArrayList<>();
-        listTest.add(10);
-        listTest.add(24);
-        listTest.add(8);
-        listTest.add(13);
-        listTest.add(7);
+        // Create the ArrayList with Values
+        List<String> listTest = new ArrayList<>();
+        // Adding values to the list
+        listTest.add("Jonika");
+        listTest.add("Tim");
+        listTest.add("Jake");
+        listTest.add("Butch");
+        listTest.add("Joseph");
+        // Display the list
         System.out.println(listTest);
 
-        // Getting the even number in the list
-        List<Integer> newList = new ArrayList<>();
+        // Now the requirement is to the remove the value " Jonika in the list
+        // and display the new list without the value "Jonika
 
-        for (Integer numList : listTest) {
-                //do some crud operations on the list
-                newList.add(numList * 2);
-
+        // Step 1
+        // Create a new list to hold the
+        List<String> newList = new ArrayList<>();
+        for (int i = 0; i < listTest.size(); i++) {
+            //do some crud operations on the list
+            String newValue = listTest.get(i);
+            if (newValue.equalsIgnoreCase("jonika")) {
+                newList.add(newValue);
+            }
         }
-        System.out.println(newList);
+        listTest.removeAll(newList);
+        System.out.println(listTest);
 
-        //Stream Api to get the even numbers in the list
-        List<Integer> streamList = listTest.stream().map(num->num*2).collect(Collectors.toList());
-        System.out.println(streamList);
     }
 }
