@@ -17,14 +17,14 @@ public class main {
         List<Integer> newList = new ArrayList<>();
 
         for (Integer numList : listTest) {
-            if (numList % 2 == 0) {
-                newList.add(numList);
-            }
+                //do some crud operations on the list
+                newList.add(numList * 2);
+
         }
         System.out.println(newList);
 
         //Stream Api to get the even numbers in the list
-        List<Integer> streamList = listTest.stream().filter(num ->num %2 ==0).collect(Collectors.toList());
+        List<Integer> streamList = listTest.stream().map(num->num*2).collect(Collectors.toList());
         System.out.println(streamList);
     }
 }
